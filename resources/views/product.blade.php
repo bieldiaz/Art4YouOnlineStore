@@ -34,11 +34,12 @@
             <div class="col-md-12">
                 @if (Auth::check())
                 <div class="btn-group mr-3">
-                    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button type="button" class="btn btn-warning dropdown-toggle user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-user"></i> {{ Auth::user()->name }}
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/home"><i class="fas fa-cog"></i> Configuración</a>
+
                     </div>
                 </div>
                 @else
@@ -47,6 +48,7 @@
                 @endif
             </div>
         </div>
+
         <!--    END      login i registro-->
         <div class="container partsuperior mt-3">
             <div class="row">
