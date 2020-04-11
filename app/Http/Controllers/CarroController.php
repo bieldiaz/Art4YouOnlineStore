@@ -39,8 +39,7 @@ class CarroController extends Controller
             return redirect()->route('carro')->with('success_message', 'Esta obra està ya en tu carro!');
         } else {
 
-            Cart::add($product->id_producte, $product->titol, 1, $product->preu, ['img' => $product->img]);
-
+            Cart::add($product->id_producte, $product->titol, 1, $product->preu, ['img' => $product->img])->associate('App\Products');
             return redirect()->route('carro')->with('success_message', 'Has añadido una obra correctamente!');
         }
     }

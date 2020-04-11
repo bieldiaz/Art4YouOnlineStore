@@ -112,9 +112,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@adminpanel')->name('home');
 Route::post('/home', 'HomeController@adminpanel')->name('home.adminpanel');
 
-
-
-
 Route::get('/edit/user/', 'HomeController@edit')->name('user.edit');
 Route::post('/edit/user/', 'HomeController@update')->name('user.update');
 
@@ -122,3 +119,13 @@ Route::post('/edit/user/', 'HomeController@update')->name('user.update');
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+Route::get('/eresartista', function () {
+    return view('registroartista');
+});
+
+Route::get('/formularioartista', function () {
+    return view('formulariartista');
+});
+
+Route::post('/formularioartista', 'FormularioArtistaController@store')->name('artistaForm.store'); //FILTRADOR ARTISTAS

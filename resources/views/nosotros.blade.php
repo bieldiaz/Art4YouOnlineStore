@@ -37,6 +37,7 @@
                     </div>
                 </div>
                 @else
+                <span tooltip="Eres un artista?" flow="down"><a href="/eresartista" style="color:black"><i class="fas fa-paint-brush fa-lg icon" style="padding-right:15px"></i></a></span>
                 <span tooltip="Iniciar Sesión" flow="down"><a href="/login" style="color:black"><i class="fas fa-sign-in-alt fa-lg icon" style="padding-right:15px"></i></a></span>
                 <span tooltip="Registro" flow="down"><a href="/register" style="color:black"><i class="fas fa-door-open fa-lg icon"></i></a></span>
                 @endif
@@ -110,11 +111,21 @@
             <div class="col-xl-12">
                 <p>ART4YOU es un proyecto que se creó para la venda especifica de cuadros. ART4YOU quiere ser la plataforma que haga de puente
                     entre artista que busca nuevos caminos para exponer su obra y el cliente que busca una pieza unica para su espacio.Es una Red Social de Arte en la cual el artista y el usuario se ponen en contacto sin intermediarios.
-                    Nosotros ayudamos al cliente a hacer una busqueda más selectiva con la ayuda de un questionario interactivo que el cliente podrà hacer gratuitamente.#
+                    Nosotros ayudamos al cliente a hacer una busqueda más selectiva con la ayuda de un questionario interactivo que el cliente podrà hacer gratuitamente.
 
                 </p>
             </div>
         </div>
+
+        <!-- <div class="row mt-5 mb-5">
+            <div class="col-xl-12 text-center">
+                <a href="/"><img src="{{asset('img/logo2.png')}}" alt="" style="width:70%"></a>
+
+            </div>
+        </div> -->
+
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.2894628639706!2d2.2488122153618684!3d41.92963097016691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a5271afa3c1a49%3A0x84ce6015c6d1183!2sLa%20Farinera%2C%20Centre%20d&#39;Arts%20Visuals%20de%20Vic!5e0!3m2!1ses!2ses!4v1585929859550!5m2!1ses!2ses" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
         <div class="row mt-5 mb-5">
             <div class="col-xl-12 text-center">

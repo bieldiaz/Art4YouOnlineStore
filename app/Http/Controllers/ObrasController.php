@@ -17,8 +17,23 @@ class ObrasController extends Controller
      */
     public function index(Request $request)
     {
-        $valor1 = $request->get('valor1');
-        $valor2 = $request->get('valor2');
+
+        //print_r($request->all());
+        $valorObtingut = $request->get('test-2');
+        $valorObtingut2 = explode(';', $valorObtingut);
+        $valor1 = $valorObtingut2[0];
+
+        if (!isset($valorObtingut2[1])) {
+            $valorObtingut2[1] = null;
+        }
+
+        $valor2 = $valorObtingut2[1];
+
+
+
+
+
+
         $valorEstil = $request->get('valorEstil');
 
 

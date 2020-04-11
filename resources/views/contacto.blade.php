@@ -33,10 +33,10 @@
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/home"><i class="fas fa-cog"></i> Configuración</a>
-
                     </div>
                 </div>
                 @else
+                <span tooltip="Eres un artista?" flow="down"><a href="/eresartista" style="color:black"><i class="fas fa-paint-brush fa-lg icon" style="padding-right:15px"></i></a></span>
                 <span tooltip="Iniciar Sesión" flow="down"><a href="/login" style="color:black"><i class="fas fa-sign-in-alt fa-lg icon" style="padding-right:15px"></i></a></span>
                 <span tooltip="Registro" flow="down"><a href="/register" style="color:black"><i class="fas fa-door-open fa-lg icon"></i></a></span>
                 @endif

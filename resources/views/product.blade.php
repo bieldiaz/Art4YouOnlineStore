@@ -33,16 +33,16 @@
         <div class="row float-right mr-5 mt-4">
             <div class="col-md-12">
                 @if (Auth::check())
-                <div class="btn-group mr-3">
-                    <button type="button" class="btn btn-warning dropdown-toggle user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="col-auto btn-group ">
+                    <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-user"></i> {{ Auth::user()->name }}
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/home"><i class="fas fa-cog"></i> Configuración</a>
-
                     </div>
                 </div>
                 @else
+                <span tooltip="Eres un artista?" flow="down"><a href="/eresartista" style="color:black"><i class="fas fa-paint-brush fa-lg icon" style="padding-right:15px"></i></a></span>
                 <span tooltip="Iniciar Sesión" flow="down"><a href="/login" style="color:black"><i class="fas fa-sign-in-alt fa-lg icon" style="padding-right:15px"></i></a></span>
                 <span tooltip="Registro" flow="down"><a href="/register" style="color:black"><i class="fas fa-door-open fa-lg icon"></i></a></span>
                 @endif
@@ -225,11 +225,19 @@
                     </div>
                     <div class="row mx-auto">
                         <div class="col-md-12 NOM mt-0">
-                            <p class="textproducte" style="margin-top:-10px;color:grey"><i style="color:black" class="fas fa-user-circle fa-2x"></i>
+                            <p class="textproducte" style="margin-top:-10px;color:grey">
                                 <?php $contador = 1; ?>
                                 @foreach($artistaForeing as $artistanom)
                                 @if($artistanom->id_artista == $product->id_artista && $contador==1)
-                                <a class="textproducte" style="margin-left:0px;font-size:17px" href="{{route('artista.show', $artistanom->nomcomplert)}}">{{$artistanom->nomcomplert}}</a>
+                                <a class="textproducte" style="margin-left:0px;font-size:17px" href="{{route('artista.show', $artistanom->nomcomplert)}}">
+
+                                    @if(!is_null($artistanom->imgArtista))
+                                    <img class="fotoArtista" src="{{asset('storage/'.$artistanom->imgArtista)}}" alt="">
+                                    @else
+                                    <i style="color:black" class="fas fa-user-circle fa-2x"></i>
+                                    @endif
+
+                                    {{$artistanom->nomcomplert}}</a>
                                 <?php $contador++; ?>
                                 @endif
                                 @endforeach
