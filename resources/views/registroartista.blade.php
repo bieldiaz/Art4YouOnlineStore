@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+@if(session()->has('success_message'))
+<div class="alert alert-success col-md-9">
+    {{session()->get('success_message')}}
+</div>
+@endif
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

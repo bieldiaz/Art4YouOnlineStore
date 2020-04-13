@@ -16,9 +16,16 @@
                     <h5>Que quieres hacer?</h5>
                     <div class="row">
                         <div class="col mt-3">
+                            @if(Auth::user()->tipo == 'admin')
+                            <button type=" button" class="btn btn-primary" onclick="window.location.href='/pintoresregistradospanel'"><i class="fas fa-palette"></i> Registro de pintores</button>
+                            <button type=" button" class="btn btn-primary" onclick="window.location.href='/mensajescontactopanel'"><i class="far fa-envelope-open"></i> Mensajes de contacto</button>
+                            <button type=" button" class="btn btn-primary" onclick="window.location.href='/pedidosclientespanel'"><i class="fas fa-shopping-cart"></i> Pedidos de Clientes</button>
+
+                            @else
                             <button type="button" class="btn btn-primary mr-2" onclick="window.location.href='/obras'"><i class="fas fa-store-alt"></i> Hir a tienda</button>
                             <button type="button" class="btn btn-primary mr-2" onclick="window.location.href='edit/user'"><i class="fas fa-users-cog"></i> Configuración de mi usuario</button>
                             <button type=" button" class="btn btn-primary" onclick="window.location.href='/carro'"><i class="fas fa-shopping-cart"></i> Mi carro</button>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -78,144 +85,6 @@
                     @endif
                 </div>
             </div>
-
-
-
-
-            @if(Auth::user()->tipo == 'admin')
-            <div class="card mt-5">
-                <div class="card-header">Admin Panel</div>
-                <div class="card-body">
-                    <nav class="navbar navbar-light bg-light mb-4">
-                        <form class="form-inline" action="{{route('home.adminpanel')}}" method="POST">
-                            {{csrf_field()}}
-                            <input class="form-control mr-sm-2" type="search" placeholder="Nombre" aria-label="Search" name="nombrefiltro" id="nombre">
-                            <input class="form-control mr-sm-2" type="date" placeholder="Data" aria-label="Search" name="data" id="data">
-
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="save">Filtrar</button>
-                        </form>
-                    </nav>
-                    <h4>Mensajes de contacto:</h4>
-
-                    @if(is_null($messagesContacto))
-                    <div class="alert alert-danger col-md-12 mt-4" role="alert">
-                        Algunos de los campos esta vacio!
-                    </div>
-                    @else
-                    @foreach($messagesContacto as $messagesContacto)
-                    <div class="linia col"></div>
-                    <div class="row mt-3">
-                        <div class="col-md-12">
-                            <p>Id message: {{$messagesContacto->id}}</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>Data: {{$messagesContacto->created_at}}</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>Nom persona: {{$messagesContacto->nombre}}</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>Telefono: {{$messagesContacto->telefono}}</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>Correo: {{$messagesContacto->email}}</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>Mensage: {{$messagesContacto->message}}</p>
-                        </div>
-                    </div>
-                    <div class="linia col"></div>
-                    @endforeach
-                    @endif
-                </div>
-            </div>
-
-            <!-- SECTION PEDIDOS -->
-            <div class="card mt-5">
-                <div class="card-header">Pedidos</div>
-                <div class="card-body">
-                    <nav class="navbar navbar-light bg-light mb-4">
-                        <form class="form-inline" action="{{route('home.adminpanel')}}" method="POST">
-                            {{csrf_field()}}
-                            <input class="form-control mr-sm-2" type="search" placeholder="Correo" aria-label="Search" name="emailpedidos" id="emailpedidos">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="saveFiltro">Filtrar</button>
-                        </form>
-                    </nav>
-
-                    <h4>Todos los pedidos:</h4>
-                    <div class="linia col mb-3"></div>
-                    @if(is_null($pedidos))
-                    <div class="alert alert-danger col-md-12 mt-4" role="alert">
-                        Correo esta vacio!
-                    </div>
-                    @else
-
-                    @foreach($pedidos as $pedidosItem)
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>ID Pedido: {{$pedidosItem->id}}</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>Nombre comprador: {{$pedidosItem->nombrecompleto}}</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>Obras: {{$pedidosItem->obras}}</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p style="color: green">Precio A Cobrar: {{$pedidosItem->precioACobrar}}</p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>Correo: {{$pedidosItem->correo}}</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>Ciudad: {{$pedidosItem->ciudad}}</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>Direccion: {{$pedidosItem->direccion}}</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>Provincia: {{$pedidosItem->provincia}}</p>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>Codigo Postal: {{$pedidosItem->codigopostal}}</p>
-                        </div>
-                    </div>
-                    <div class="linia col mb-3"></div>
-
-                    @endforeach
-                    @endif
-                </div>
-
-            </div>
-            @endif
-
 
 
         </div>

@@ -45,7 +45,7 @@
             </div>
         </div>
 
-        <!--         login i registro-->
+        <!-- login i registro-->
 
         <div class="container partsuperior mt-3 ">
             <div class="row">

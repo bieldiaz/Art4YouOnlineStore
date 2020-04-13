@@ -7,25 +7,27 @@ use Illuminate\Http\Request;
 
 class FormularioArtistaController extends Controller
 {
+    public function index()
+    {
+        return view('formulariartista');
+    }
+
     public function store(Request $request)
     {
         $this->validate($request, [
-            'nombre' => 'required',
+            'nombrecompleto' => 'required',
             'correo' => 'required|email',
-            'telefono' => 'required|regex:/(01)[0-9]{9}/',
+            'telefono' => 'required|numeric|min:10',
             'about' => 'required'
         ]);
-        $artistaForm = new ArtistaFormulario();
 
+        $artistaForm = new ArtistaFormulario();
         $artistaForm->nomcomplert = $request['nombrecompleto'];
         $artistaForm->correo = $request['correo'];
         $artistaForm->telefono = $request['telefono'];
         $artistaForm->textoFormulario = $request['about'];
-
-        //dd($request->all());
         $artistaForm->save();
-
-
+        $request->session()->flash('success_message', 'Te has inscrito como artista correctamente! Proximamente contactaremos contigo!');
         return redirect()->back();
     }
 }

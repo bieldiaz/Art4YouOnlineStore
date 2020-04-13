@@ -1,8 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
+
     <div class="row justify-content-center">
+        @if(session()->has('success_message'))
+        <div class="alert alert-success col-md-6">
+            {{session()->get('success_message')}}
+        </div>
+        @endif
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header" style="color: #F7CA18;">{{ __('Formulario de Artista') }}</div>
@@ -40,10 +47,8 @@
                         </div>
                         <div class="form-group row">
                             <label for="telefono" class="col-md-4 col-form-label text-md-right">{{ __('Teléfono') }}</label>
-
                             <div class="col-md-6">
-                                <input id="telefono" type="number" class="form-control @error('telefono') is-invalid @enderror" name="telefono" required autocomplete="telefono">
-
+                                <input id="telefono" type="text" class="form-control @error('telefono') is-invalid @enderror" name="telefono" required autocomplete="telefono">
                                 @error('telefono')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -51,13 +56,11 @@
                                 @enderror
                             </div>
                         </div>
-
                         <div class="form-group row">
                             <label for="about" class="col-md-4 col-form-label text-md-right">{{ __('Cuentanos Sobre ti') }}</label>
 
                             <div class="col-md-6">
-                                <textarea class="form-control" rows="10" placeholder="Redacta un pequeño texto contandonos tu perfil" name="about"></textarea>
-
+                                <textarea id="about" class="form-control" rows="10" placeholder="Redacta un pequeño texto contandonos tu perfil" name="about" required></textarea>
 
                             </div>
                         </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ArtistaFormulario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
@@ -27,7 +28,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if (Auth::user()) { //PEDIDOS INDIVIDUAL
+            $todospedidos = Pedidos::all();
+            $emailUser = Auth::user()->email;
+            $pedidoIndividual = Pedidos::where('correo', 'like', "%$emailUser%")->get();
+        }
+
+        return view('home', compact('pedidoIndividual'));
     }
 
     public function edit()
@@ -62,7 +69,41 @@ class HomeController extends Controller
         }
     }
 
-    public static function adminpanel(Request $request)
+    public function pedidosClientes()
+    {
+        $pedidos = Pedidos::all();
+
+        return view('adminpanels.pedidosClientesPanel', compact('pedidos'));
+    }
+
+    public static function pedidosClientesPanel(Request $request)
+    {
+
+        if (isset($_POST['saveFiltro'])) {
+
+            $pedidos = $request->get('emailpedidos');
+
+            if (is_null($pedidos)) {
+                $pedidos = null;
+            } elseif (!is_null($pedidos)) {
+                $pedidos = Pedidos::where('correo', 'like', "%$pedidos%")->paginate(12);
+            }
+        } else {
+            $pedidos = Pedidos::all();
+        }
+
+        return view('adminpanels.pedidosClientesPanel', compact('pedidos'));
+    }
+
+
+    public function mensajesContacto()
+    {
+        $messagesContacto = Contacto::all();
+
+        return view('adminpanels.mensajesContactoPanel', compact('messagesContacto'));
+    }
+
+    public function mensajesContactoPanel(Request $request)
     {
         if (isset($_POST['save'])) {
 
@@ -79,26 +120,32 @@ class HomeController extends Controller
         } else {
             $messagesContacto = Contacto::all();
         }
+        return view('adminpanels.mensajesContactoPanel', compact('messagesContacto'));
+    }
 
-        if (isset($_POST['saveFiltro'])) {
 
-            $pedidos = $request->get('emailpedidos');
+    public function registroPintores()
+    {
+        $pintores = ArtistaFormulario::all();
 
-            if (is_null($pedidos)) {
-                $pedidos = null;
-            } elseif (!is_null($pedidos)) {
-                $pedidos = Pedidos::where('correo', 'like', "%$pedidos%")->paginate(12);
+        return view('adminpanels.registropintorespanel', compact('pintores'));
+    }
+
+    public static function registroPintoresFiltrador(Request $request)
+    {
+        if (isset($_POST['save'])) {
+
+            $pintores = $request->get('nombrefiltro');
+
+            if (is_null($pintores)) {
+                $pintores = null;
+            } elseif (!is_null($pintores)) {
+                $pintores = ArtistaFormulario::where('nomcomplert', 'like', "%$pintores%")->paginate(12);
             }
         } else {
-            $pedidos = Pedidos::all();
+            $pintores = ArtistaFormulario::all();
         }
 
-        if (Auth::user()) { //PEDIDOS INDIVIDUAL
-            $todospedidos = Pedidos::all();
-            $emailUser = Auth::user()->email;
-            $pedidoIndividual = Pedidos::where('correo', 'like', "%$emailUser%")->get();
-        }
-
-        return view('home', compact('messagesContacto', 'pedidos', 'pedidoIndividual'));
+        return view('adminpanels.registropintorespanel', compact('pintores'));
     }
 }

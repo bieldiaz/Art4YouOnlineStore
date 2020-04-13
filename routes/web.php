@@ -109,8 +109,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@adminpanel')->name('home');
-Route::post('/home', 'HomeController@adminpanel')->name('home.adminpanel');
+
+
+Route::get('/mensajescontactopanel', 'HomeController@mensajesContacto')->name('mensajesContacto.index');
+Route::post('/mensajescontactopanel', 'HomeController@mensajesContactoPanel')->name('mensajesContacto.adminpanel');
+
+
+Route::get('/pedidosclientespanel', 'HomeController@pedidosclientes')->name('pedidosClientes.index');
+Route::post('/pedidosclientespanel', 'HomeController@pedidosclientesPanel')->name('pedidosClientes.adminpanel');
+
 
 Route::get('/edit/user/', 'HomeController@edit')->name('user.edit');
 Route::post('/edit/user/', 'HomeController@update')->name('user.update');
@@ -124,8 +131,14 @@ Route::get('/eresartista', function () {
     return view('registroartista');
 });
 
-Route::get('/formularioartista', function () {
+/* Route::get('/formularioartista', function () {
     return view('formulariartista');
-});
+}); */
 
+Route::get('/pintoresregistradospanel', 'HomeController@registroPintores')->name('pintoresRegistrados'); //PANEL
+Route::post('/pintoresregistradospanel', 'HomeController@registroPintoresFiltrador')->name('pintoresRegistradosFiltrador'); //PANEL
+
+
+
+Route::get('/formularioartista', 'FormularioArtistaController@index')->name('artistaForm.index');
 Route::post('/formularioartista', 'FormularioArtistaController@store')->name('artistaForm.store'); //FILTRADOR ARTISTAS
