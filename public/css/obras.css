@@ -825,12 +825,29 @@ DEMO
 
 .filtradorNoms:hover{
   color:#F7CA18;
+}
+
+
+/* .activefilter::before{
+  font-family: "Font Awesome 5 Brands"; content: "\f1ea";
+} */
+
+.inactive{
+  color:blue;
 
 }
 
-.filtradorNoms:target{
-  color:#F7CA18;
-
+.activefilter:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 15px 0 0;
+  border-color: #F7CA18 transparent transparent transparent;
 }
 
 

@@ -143,6 +143,7 @@
                                 <span class="letters">Cuadros</span>
                             </span>
                         </h1>
+
                     </div>
                 </div>
                 <div class="row">
@@ -158,9 +159,19 @@
 
                 <div class="row mt-3">
                     <div class="col-md-12 ">
-                        <div class="filtradordreta">
+                        <div class="filtradordreta d-block float-left">
                             <h6>Cuadros ({{count($products)}})</h6>
                         </div>
+                        @if(isset($valorEstil))
+                        <div class="filtradordreta d-block float-right">
+                            <h6>Estilo: {{$valorEstil}}</h6>
+                        </div>
+                        @endif
+                        @if(isset($valor1) && isset($valor2))
+                        <div class="filtradordreta d-block float-right">
+                            <h6>Precio: {{$valor1}}€ - {{$valor2}}€</h6>
+                        </div>
+                        @endif
                     </div>
                 </div>
 
@@ -230,6 +241,16 @@
 
 
 <script>
+    $('.filtradorNoms').click(function(e) {
+        //e.preventDefault();
+        var $this = $(this);
+        $this.closest('a').find('a.activefilter').removeClass('activefilter');
+        $this.addClass('activefilter');
+        $this.parent().addClass('activefilter');
+    });
+
+
+
     anime.timeline({
             loop: false
         })

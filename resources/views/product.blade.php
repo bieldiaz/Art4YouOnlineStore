@@ -145,6 +145,7 @@
                     </div>
                 </div>
                 <div class="liniapreu mb-5"></div>
+
                 <div class="row">
                     <h5 style="color:#787878;margin-left:5px">Información adicional</h5>
                 </div>
@@ -178,6 +179,7 @@
                     </table>
                 </div>
                 @if(is_null($product->vendido))
+
                 <div class="row justify-content-center d-flex">
                     <form action="{{route('carro.store', $product)}}" method="POST">
                         {{csrf_field()}}
