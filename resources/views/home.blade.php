@@ -17,14 +17,15 @@
                     <div class="row">
                         <div class="col mt-3">
                             @if(Auth::user()->tipo == 'admin')
-                            <button type=" button" class="btn btn-primary" onclick="window.location.href='/pintoresregistradospanel'"><i class="fas fa-palette"></i> Registro de pintores</button>
-                            <button type=" button" class="btn btn-primary" onclick="window.location.href='/mensajescontactopanel'"><i class="far fa-envelope-open"></i> Mensajes de contacto</button>
-                            <button type=" button" class="btn btn-primary" onclick="window.location.href='/pedidosclientespanel'"><i class="fas fa-shopping-cart"></i> Pedidos de Clientes</button>
+                            <button type=" button" class="btn btn-primary mr-2 mb-2" onclick="window.location.href='/pintoresregistradospanel'"><i class="fas fa-palette"></i> Registro de pintores</button>
+                            <button type=" button" class="btn btn-primary mr-2 mb-2" onclick="window.location.href='/mensajescontactopanel'"><i class="far fa-envelope-open"></i> Mensajes de contacto</button>
+                            <button type=" button" class="btn btn-primary mr-2 mb-2" onclick="window.location.href='/pedidosclientespanel'"><i class="fas fa-shopping-cart"></i> Pedidos de Clientes</button>
 
                             @else
-                            <button type="button" class="btn btn-primary mr-2" onclick="window.location.href='/obras'"><i class="fas fa-store-alt"></i> Hir a tienda</button>
-                            <button type="button" class="btn btn-primary mr-2" onclick="window.location.href='edit/user'"><i class="fas fa-users-cog"></i> Configuración de mi usuario</button>
-                            <button type=" button" class="btn btn-primary" onclick="window.location.href='/carro'"><i class="fas fa-shopping-cart"></i> Mi carro</button>
+
+                            <button type="button" class="btn btn-primary mr-2 mb-2" onclick="window.location.href='/obras'"><i class="fas fa-store-alt"></i> Hir a tienda</button>
+                            <button type="button" class="btn btn-primary mr-2 mb-2" onclick="window.location.href='edit/user'"><i class="fas fa-users-cog"></i> Configuración de mi usuario</button>
+                            <button type=" button" class="btn btn-primary mr-2 mb-2" onclick="window.location.href='/carro'"><i class="fas fa-shopping-cart"></i> Mi carro</button>
                             @endif
                         </div>
                     </div>

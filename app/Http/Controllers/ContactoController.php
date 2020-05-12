@@ -27,6 +27,6 @@ class ContactoController extends Controller
 
         $contacto->save();
 
-        return redirect()->back()->with('flash_message', 'Gracias por tu mensage');
+        return redirect()->back()->with('flash_message', 'Gracias por tu mensaje! Pronto recibirás tu respuesta!');
     }
 }

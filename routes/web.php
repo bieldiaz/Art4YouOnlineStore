@@ -74,9 +74,7 @@ Route::post('contacto', [
 
 /* =================*/
 
-Route::get('/questionario', function () {
-    return view('questionario');
-});
+
 
 Route::get('/nosotros', function () {
     return view('nosotros');
@@ -142,3 +140,14 @@ Route::post('/pintoresregistradospanel', 'HomeController@registroPintoresFiltrad
 
 Route::get('/formularioartista', 'FormularioArtistaController@index')->name('artistaForm.index');
 Route::post('/formularioartista', 'FormularioArtistaController@store')->name('artistaForm.store'); //FILTRADOR ARTISTAS
+
+
+//QUESTIONARI
+
+
+Route::get('/questionario', 'FormulariAjudaController@index')->name('questionario.index');
+Route::post('/questionario', 'FormulariAjudaController@agafarPreguntes')->name('questionario.guardarPreguntes'); //FILTRADOR ARTISTAS
+
+
+
+Route::get('/tusresultados', 'FormulariAjudaController@indexresultados')->name('resultados.index');

@@ -17,271 +17,263 @@
 
 </head>
 
+<body>
+    <form action="{{ route('questionario.guardarPreguntes')}}" method="POST">
+        {{csrf_field()}}
 
-<div class="container">
-    <div class="row">
-        <section>
-            <div class="wizard">
-                <div class="wizard-inner">
-                    <div class="connecting-line"></div>
-                    <ul class="nav nav-tabs" role="tablist">
+        <div class="modalINICIO" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Bienvenido {{ Auth::user()->name }} al Questionario</h5>
 
-                        <li role="presentation" class="active">
-                            <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
-                                <span class="round-tab">
-                                    <i class="glyphicon glyphicon-user"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li role="presentation" class="disabled">
-                            <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
-                                <span class="round-tab">
-                                    <i class="glyphicon glyphicon-picture"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li role="presentation" class="disabled">
-                            <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
-                                <span class="round-tab">
-                                    <i class="glyphicon glyphicon-briefcase"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li role="presentation" class="disabled">
-                            <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
-                                <span class="round-tab">
-                                    <i class="glyphicon glyphicon-ok"></i>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
+                    </div>
+                    <div class="modal-body">
+                        <p>Te preguntaras para que es todo esto? En este sitio de la pagina te ayudaremos a escojer tu obra ideal,
+                            dentro de tu presupuesto y tus ideas. Si quieres comenzar dale click a empezar! <br>
+                        </p>
+                        <p class="lletrapetita mt-5">En este formulario te encontraras con 4 preguntas muy especificas</p>
+
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-warning empezar " data-toggle="modal" data-target="#myModal1">
+                            <i class="fas fa-home"></i> Volver a inicio
+                        </button>
+
+                        <button type="button" class="btn btn-warning empezar" data-toggle="modal" data-target="#myModal1">
+                            Empezar <i class="fas fa-chevron-circle-right"></i>
+                        </button>
+                    </div>
                 </div>
+            </div>
+        </div>
 
-                <form role="form" id="form" data-toggle="validator">
-                    <div class="tab-content">
-                        <div class="tab-pane fade in active" role="tabpanel" id="step1">
-                            <div class="container-fluid myData">
-                                <div class="row col-md-12">
-                                    <div class="col-md-8">
-                                        <h2 class="text-center">Welcome Manpreet!</h2>
-                                        <h2>Personal Info</h2>
-                                        <h3>Step 1 - Kindly Provide your Personal Info</h3>
-                                    </div>
-                                </div>
-                                <div class="row col-md-12">
-                                    <div class="col-md-3">
-                                        <label for="age">Age</label>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <input type="number" min="0" class="form-control" placeholder="Age" aria-describedby="basic-addon1" id="age" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row col-md-12">
-                                    <div class="col-md-3">
-                                        <label for="gender">Gender</label>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <select class="form-control" id="gender" required>
-                                                <option value="None" disabled selected required>None</option>
-                                                <option value="Male">Male</option>
-                                                <option value="Female">Female</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row col-md-12">
-                                    <div class="col-md-3">
-                                        <label for="city">City <small>(Optional)</small></label>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="City" aria-describedby="basic-addon1" id="city" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row col-md-12">
-                                    <div class="col-md-3">
-                                        <label for="country">Country <small>(Optional)</small></label>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Country" aria-describedby="basic-addon1" id="country" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row col-md-12">
-                                    <div class="col-md-4 pull-right">
-                                        <button type="button" class="btn btn-success next-step">Save and continue</button>
-                                    </div>
-                                </div>
-                            </div>
+
+        <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Buscas un cuadro abstracto o figurativo?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="estilo" id="estilo" value="abstracto" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                                Abstracto
+                            </label>
                         </div>
-                        <div class="tab-pane fade" role="tabpanel" id="step2">
-                            <div class="container-fluid myData">
-                                <div class="row col-md-12">
-                                    <div class="col-md-8">
-                                        <h2>Set your Avatar</h2>
-                                        <h3>Step 2 - Come on.. Put a Face to that name..</h3>
-                                    </div>
-                                </div>
-                                <div class="row col-md-12">
-                                    <div class="col-md-3">
-                                        <label for="avatar">Picture</label>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <input type="file" id="avatar" />
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
-                                                <span class="sr-only">0% Complete</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row col-md-12">
-                                    <ul class="list-inline pull-right">
-                                        <li>
-                                            <button type="button" class="btn btn-default prev-step">Previous</button>
-                                        </li>
-                                        <li>
-                                            <button type="button" class="btn btn-success next-step">Save and continue</button>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" role="tabpanel" id="step3">
-                            <div class="container-fluid myData">
-                                <div class="row col-md-12">
-                                    <div class="col-md-8">
-                                        <h2>Career and Profession</h2>
-                                        <h3>Step 3 - Kindly Provide your Professional Info</h3>
-                                    </div>
-                                </div>
-                                <div class="row col-md-12">
-                                    <div class="col-md-3">
-                                        <label for="jobTitle">Job Title</label>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Job Title" aria-describedby="basic-addon1" id="jobTitle" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row col-md-12">
-                                    <div class="col-md-3">
-                                        <label for="startupName">Startup Name</label>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Startup Name" aria-describedby="basic-addon1" id="startupName">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row col-md-12">
-                                    <div class="col-md-3">
-                                        <label for="education">Education</label>
-                                    </div>
-                                    <div class="col-md-5">
-                                        <div class="form-group">
-                                            <select class="form-control" id="education" required>
-                                                <option value="None" disabled selected>None</option>
-                                                <option value="primary">Primary School</option>
-                                                <option value="secondary">Secondary School</option>
-                                                <option value="bachelor">Bachelor's Degree</option>
-                                                <option value="postGraduate">Post Graduate Degree</option>
-                                                <option value="associate">Associate Degree</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row col-md-12">
-                                    <ul class="list-inline pull-right">
-                                        <li>
-                                            <button type="button" class="btn btn-default prev-step">Previous</button>
-                                        </li>
-                                        <li>
-                                            <button type="button" class="btn btn-default next-step">Skip</button>
-                                        </li>
-                                        <li>
-                                            <button type="button" class="btn btn-success next-step">Save and continue</button>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" role="tabpanel" id="complete">
-                            <div class="container-fluid myData">
-                                <div class="row col-md-12">
-                                    <div class="center-block text-center">
-                                        <h2>Thank you for Joining Multiplier<span style="color:#f48260;" class="glyphicon glyphicon-heart"></span></h2>
-                                        <input type="submit" class="btn btn-success" />
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="estilo" id="estilo" value="figurativo">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Figurativo
+                            </label>
                         </div>
 
                     </div>
-                </form>
+                    <div class="modal-footer">
+                        <div class="dropdown col " style="margin-left:0px;display:flex">
+                            <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-question-circle"></i>
+                            </button>
+                            <div class="dropdown-menu row" aria-labelledby="dropdownMenu2">
+                                <div class="col">
+                                    <p class="negreta">Arte Abstracto: </p>
+                                    <p>El arte abstracto es una forma de expresión artística que prescinde de toda figuración y propone una nueva realidad distinta a la natural</p>
+                                    <p class="negreta">Arte Figurativo: </p>
+                                    <p>És el arte que, al contrario que el arte abstracto, se define por la representación1​ de figuras, entendiendo estas como objetos identificables mediante imágenes reconocibles</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-default btn-prev"><i class="fas fa-chevron-circle-left fa-lg "></i></button>
+                        <button type="button" class="btn btn-default btn-next float-left d-flex"><i class="fas fa-chevron-circle-right fa-lg"></i></button>
+
+                    </div>
+                </div>
             </div>
-        </section>
-    </div>
-</div>
+        </div>
+
+        <!-- Button trigger modal -->
+        <!--     <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">
+        Player 2
+    </button> -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Que temática buscas?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="tematica" id="tematica" value="paisajes" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                                Paisajes
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="tematica" id="tematica" value="figura">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Figura
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="tematica" id="tematica" value="bodegón">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Bodegón
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <div class="dropdown col " style="margin-left:0px;display:flex">
+                            <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-question-circle"></i>
+                            </button>
+                            <div class="dropdown-menu row" aria-labelledby="dropdownMenu2">
+                                <div class="col">
+                                    <p class="negreta">Bodegón: </p>
+                                    <img src="{{ asset('img/bodegon.jpg') }}" alt="" class="img-responsive img-bodegon">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-default btn-prev"><i class="fas fa-chevron-circle-left fa-lg "></i></button>
+                        <button type="button" class="btn btn-default btn-next float-left d-flex"><i class="fas fa-chevron-circle-right fa-lg"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Que medidas buscas?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="medidas" id="medidas" value="Pequeño" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                                Pequeño
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="medidas" id="medidas" value="Mediano">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Mediano
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="medidas" id="medidas" value="Grande">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Grande
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="medidas" id="Extra medidas" value="Extra Grande">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Extra Grande
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="medidas" id="medidas" value="Poster">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Poster
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="button" class="btn btn-default btn-prev"><i class="fas fa-chevron-circle-left fa-lg "></i></button>
+                        <button type="button" class="btn btn-default btn-next float-left d-flex"><i class="fas fa-chevron-circle-right fa-lg"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Que presupuesto tienes?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="presupuesto" id="presupuesto" value="0€-500€" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                                0€ - 500€
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="presupuesto" id="presupuesto" value="500€-1000€">
+                            <label class="form-check-label" for="exampleRadios2">
+                                500€ - 1000€
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="presupuesto" id="presupuesto" value="1000€-2000€">
+                            <label class="form-check-label" for="exampleRadios2">
+                                1000€ - 2000€
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="presupuesto" id="presupuesto" value="2000€-5000€">
+                            <label class="form-check-label" for="exampleRadios2">
+                                2000€ - 5000€
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="presupuesto" id="presupuesto" value=">5000€">
+                            <label class="form-check-label" for="exampleRadios2">
+                                > 5000€
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-default btn-next float-left d-flex">Finalizar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+<!-- BOOSTRAP SCRIPTS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 <script>
     $(document).ready(function() {
-        //Initialize tooltips
-        $('.nav-tabs > li a[title]').tooltip();
-
-        //Wizard
-        $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
-
-            var $target = $(e.target);
-
-            if ($target.parent().hasClass('disabled')) {
-                return false;
-            }
+        $(".empezar").click(function() {
+            $(".modalINICIO").css("display", "none");
         });
 
-        $(".next-step").click(function(e) {
-
-            var $active = $('.wizard .nav-tabs li.active');
-            $active.next().removeClass('disabled');
-            nextTab($active);
-
-        });
-        $(".prev-step").click(function(e) {
-
-            var $active = $('.wizard .nav-tabs li.active');
-            prevTab($active);
-
+        $(".finalizar").click(function() {
+            $(".resultados").css("display", "block");
         });
 
-        $(".next-step").click(function(e) {
-            $('#form').validator().on('submit', function(e) {
-                if (e.isDefaultPrevented()) {
-                    // handle the invalid form...
-                    alert("Failed");
-                } else {
-                    // everything looks good!
-                    alert("Successful!");
-                }
-            });
-        });
-
-
-
-        //End of Doc Ready
     });
 
-    function nextTab(elem) {
-        $(elem).next().find('a[data-toggle="tab"]').click();
-    }
-
-    function prevTab(elem) {
-        $(elem).prev().find('a[data-toggle="tab"]').click();
-    }
+    $("div[id^='myModal']").each(function() {
+        var currentModal = $(this);
+        //click next
+        currentModal.find('.btn-next').click(function() {
+            currentModal.modal('hide');
+            currentModal.closest("div[id^='myModal']").nextAll("div[id^='myModal']").first().modal('show');
+        });
+        //click prev
+        currentModal.find('.btn-prev').click(function() {
+            currentModal.modal('hide');
+            currentModal.closest("div[id^='myModal']").prevAll("div[id^='myModal']").first().modal('show');
+        });
+    });
 </script>
 
 </html

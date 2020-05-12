@@ -1,187 +1,72 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:400,100,300,700);
-
-body {
-  background-color: #ddd;
-}
-.myData .col-md-12 > h1,h2,h3,label,select{
-  font-family: 'Lato';
-  font-weight: 300;
-}
-.btn{
-  font-family: 'Lato' !important;
-  font-weight: 400 !important;
-  /* font-size: 15px; */
-}
-.wizard {
-  border-radius: 0 0 5px 5px;
-  margin: 20px auto;
-  background: #fff;
+.modalINICIO{
+  display: block;
 }
 
-.wizard .nav-tabs {
-  position: relative;
-  /* margin: 40px auto; */
-  margin-bottom: 0;
-  border-bottom-color: #e0e0e0;
-  background-color: #39cb58;
-  box-shadow: inset 0px -5px rgba(0,0,0,0.25);
+.resultados{
+  display: block;
 }
 
-.wizard > div.wizard-inner {
-  position: relative;
+html,body {
+  animation: colorchange 300s; /* animation-name followed by duration in seconds*/
+     /* you could also use milliseconds (ms) or something like 2.5s */
+  -webkit-animation: colorchange 300s; /* Chrome and Safari */
+  font-family: 'Cabin', sans-serif;
+  width: 100%;
+  overflow-y: auto;
+  padding:0;
+  margin:0;
+  vertical-align: baseline;
+
 }
 
-.connecting-line {
-  height: 2px;
-  background: #e0e0e0;
-  position: absolute;
-  width: 80%;
-  margin: 0 auto;
-  left: 0;
-  right: 0;
-  top: 50%;
-  z-index: 1;
+@keyframes colorchange
+{
+  0%   {background: red;}
+  25%  {background: yellow;}
+  50%  {background: blue;}
+  75%  {background: green;}
+  100% {background: red;}
 }
 
-.wizard .nav-tabs > li.active > a,
-.wizard .nav-tabs > li.active > a:hover,
-.wizard .nav-tabs > li.active > a:focus {
-  color: #555555;
-  cursor: default;
-  border: 0;
-  border-bottom-color: transparent;
+@-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+{
+  0%   {background: red;}
+  25%  {background: yellow;}
+  50%  {background: blue;}
+  75%  {background: green;}
+  100% {background: red;}
 }
 
-span.round-tab {
-  width: 70px;
-  height: 70px;
-  line-height: 70px;
-  display: inline-block;
-  border-radius: 100px;
-  background: #fff;
-  border: 2px solid #e0e0e0;
-  z-index: 2;
-  position: absolute;
-  left: 0;
-  text-align: center;
-  font-size: 25px;
+.negreta{
+  font-weight: bold;
 }
 
-span.round-tab i {
-  color: #555555;
+.img-bodegon{
+  width: 300px;
+  height: 200px;
 }
 
-.wizard li.active span.round-tab {
-  color: #fff;
-  background: #fff;
-  background: rgba(57, 203, 88,1);
-  border: 2px solid #5bc0de;
-  border: 2px solid green;
+.lletrapetita{
+  color: grey;
+  font-size: 10px;
 }
 
-.wizard li.active span.round-tab i {
-  color: #5bc0de;
-  color: #fff;
+.imgresultats{
+  width: 200px;
+  height: 100px;
 }
 
-span.round-tab:hover {
-  color: #333;
-  border: 2px solid #ddd;
+.modal-bodyresultados{
+ height: 600px;
+  overflow-y: auto;
 }
 
-.wizard .nav-tabs > li {
-  width: 25%;
+.linia{
+  width: 100%;
+  border: 1px solid black;
 }
+.imgresultats:hover{
+  box-shadow: 0 0 5px #000
 
-.wizard li:after {
-  content: " ";
-  position: absolute;
-  left: 46%;
-  opacity: 0;
-  margin: 0 auto;
-  bottom: 0px;
-  border: 5px solid transparent;
-  border-bottom-color: #5bc0de;
-  border-bottom-color: #fff;
-  transition: 0.1s ease-in-out;
-}
 
-.wizard li.active:after {
-  content: " ";
-  position: absolute;
-  left: 46%;
-  opacity: 1;
-  margin: 0 auto;
-  bottom: 0px;
-  border: 10px solid transparent;
-  border-bottom-color: #5bc0de;
-  border-bottom-color: #fff;
 }
-
-.wizard .nav-tabs > li a {
-  width: 70px;
-  height: 70px;
-  margin: 20px auto;
-  border-radius: 100%;
-  padding: 0;
-}
-
-.wizard .nav-tabs > li a:hover {
-  background: transparent;
-}
-
-.wizard .tab-pane {
-  position: relative;
-  padding: 20px;
-}
-
-.wizard h3 {
-  margin-top: 0;
-}
-h1, h2, h3{
-  color: #555;
-}
-label{
-  text-align: center;
-  font-size: 16px;
-}
-.btn{
-  margin-top: 10px;
-  padding: 15px 25px;
-}
-.progress{
-  margin-top: 10px;
-  /* background-color: red !important; */
-}
-
-@media( max-width: 585px) {
-  .wizard {
-    width: 90%;
-    height: auto !important;
-  }
-  span.round-tab {
-    font-size: 16px;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-  }
-  .wizard .nav-tabs > li a {
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-  }
-  .wizard li.active:after {
-    content: " ";
-    position: absolute;
-    left: 35%;
-  }
-}
-
-/* sm screen size */
-/*@media only screen and (min-width: 768px) {
-    body{font-size: 14px !important;}
-}*/
-/* xs screen size */
-/*@media only screen and (max-width: 768px) {
-    body{font-size: 100% !important;}
-}*/

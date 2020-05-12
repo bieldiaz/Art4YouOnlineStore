@@ -16,16 +16,12 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{asset('css/welkome.css')}}">
 
-
-
 </head>
 
 <body>
 
-
     <header>
         <!--         login i registro-->
-
         <div class="row float-right mr-5 mt-4">
             <div class="col-md-12">
                 @if (Auth::check())

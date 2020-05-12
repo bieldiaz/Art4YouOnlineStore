@@ -21,6 +21,7 @@ class ObrasController extends Controller
         //print_r($request->all());
         $valorObtingut = $request->get('test-2');
         $valorObtingut2 = explode(';', $valorObtingut);
+
         $valor1 = $valorObtingut2[0];
 
         if (!isset($valorObtingut2[1])) {

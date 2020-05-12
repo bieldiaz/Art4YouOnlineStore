@@ -170,7 +170,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <h4 class="mt-4">Payment details</h4>
+                        <h4 class="mt-4">Detalles del pago</h4>
 
                     </div>
                     <!-- <div class="form-group">
@@ -194,11 +194,7 @@
                     </div>
                     <input type="hidden" class="form-control" id="newTotal" name="newTotal" value="{{$newTotal}}" required>
 
-                    <div class="row">
-                        <div class="col">
-                            <button type="submit" id="complete-order" class="btn btn-success w-100">Completar compra</button>
-                        </div>
-                    </div>
+
 
                 </form>
 
@@ -301,6 +297,12 @@
 
         </div> <!-- end-billingdetails -->
 
+
+        <div class="row">
+            <div class="col mb-5">
+                <button type="submit" id="complete-order" class="btn btn-success w-100">Completar compra</button>
+            </div>
+        </div>
 
 
     </div>
