@@ -21,7 +21,6 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{asset('css/product.css')}}">
-
     <!-- ZOOM -->
     <link type="text/css" rel="stylesheet" href="{{asset('css/magiczoom.css')}}" />
     <script type="text/javascript" src="{{URL::asset('js/magiczoom.js') }}"></script>
@@ -29,6 +28,8 @@
 
 <body>
     <header>
+        @include('cookieConsent::index')
+
         <!--         login i registro-->
         <div class="row float-right mr-5 mt-4">
             <div class="col-md-12">
@@ -254,4 +255,8 @@
 
     @include('layouts.footer');
 
+
+    <script>
+
+    </script>
 </body>

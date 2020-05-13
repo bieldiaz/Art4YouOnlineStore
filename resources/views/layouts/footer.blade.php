@@ -37,15 +37,15 @@
     </div>
     <div class="footer-right">
         <p class="footer-company-about">
-            <span>About Art4You</span>
-            Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+            <span>Sobre Art4You</span>
+            ART4YOU es un proyecto que se creó para la venda especifica de cuadros. ART4YOU quiere ser la plataforma que haga de puente entre artista que busca nuevos caminos para exponer su obra y el cliente que busca una pieza unica para su espacio.
         </p>
         <div class="footer-icons">
 
-            <a href="#"><i class="fa fa-facebook"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-github"></i></a>
+            <a href="https://www.instagram.com/bieldg99/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/biel.diazgadea"><i class="fab fa-facebook-square"></i></a>
+            <a href="https://www.linkedin.com/in/biel-d%C3%ADaz-gadea/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/bieldiaz/Art4YouOnlineStore"><i class="fab fa-github"></i></a>
         </div>
     </div>
 </footer>

@@ -24,12 +24,19 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Este es tú resultado!</h4>
+                    <h4 class="modal-title mt-3" id="myModalLabel">Este es tú resultado!</h4>
                     <a href="/"><img src="{{asset('img/logooficial.png')}}" alt="" style="width:90px;heigth:25px;"></a>
                 </div>
                 <div class="modal-bodyresultados">
 
+                    @if($resultados->isEmpty())
+                    <div class="alert alert-danger mt-5 ml-3 mr-3" role="alert">
+                        NO SE HAN ENCONTRADO RESULTADOS
+                    </div>
+                    <button type="button" class="btn btn-warning mx-auto d-flex" onclick="window.location.href='/questionario'">Volver Hacer Questionario</button>
+                    @endif
 
+                    @if(isset($resultados))
                     @foreach($resultados as $resultadosItem)
                     <div class="linia"></div>
                     <div class="row mt-5 mb-5 mx-auto">
@@ -44,8 +51,11 @@
                         </div>
                     </div>
                     <div class="linia"></div>
-                    @endforeach
 
+                    <button type="button" class="btn btn-warning mx-auto d-flex mt-4" onclick="window.location.href='/'"><i class="fas fa-house-user"></i> Pagina Inicio</button>
+
+                    @endforeach
+                    @endif
                 </div>
 
             </div>

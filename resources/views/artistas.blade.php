@@ -24,6 +24,7 @@
 <body>
     <header>
         <!--         login i registro-->
+        @include('cookieConsent::index')
 
         <div class="row float-right mr-5 mt-4">
             <div class="col-md-12">

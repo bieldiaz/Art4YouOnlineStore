@@ -86,7 +86,6 @@
                             </div>
                         </div>
 
-                        <button type="button" class="btn btn-default btn-prev"><i class="fas fa-chevron-circle-left fa-lg "></i></button>
                         <button type="button" class="btn btn-default btn-next float-left d-flex"><i class="fas fa-chevron-circle-right fa-lg"></i></button>
 
                     </div>
