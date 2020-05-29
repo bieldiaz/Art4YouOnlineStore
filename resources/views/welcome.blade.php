@@ -90,10 +90,19 @@
                     </span>
                 </h1>
 
-                <div class="row mx-auto mt-5">
-                    <div class="col-md-12 mx-auto"> <a href="/questionario" class="btn btn-sm animated-button thar-one">Questionario</a></div>
+
+                <div class="row mx-auto mt-3">
+                    <div class="col mt-1">
+                        <a href="/questionario" class="btn btn-sm animated-button thar-one">Questionario</a>
+                    </div>
+                    <div class="col mt-1">
+                        <a href="/presentacion" class="btn btn-sm animated-button thar-one">Presentación</a>
+                    </div>
                 </div>
+
+
             </div>
+        </div>
         </div>
     </header>
 

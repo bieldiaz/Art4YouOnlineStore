@@ -37,7 +37,7 @@
                     </div>
                     <div class="modal-footer">
 
-                        <button type="button" class="btn btn-warning empezar " data-toggle="modal" data-target="#myModal1">
+                        <button type="button" class="btn btn-warning empezar " onclick="window.location.href='/'">
                             <i class="fas fa-home"></i> Volver a inicio
                         </button>
 

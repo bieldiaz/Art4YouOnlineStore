@@ -115,7 +115,7 @@
                     {{csrf_field()}}
                     <div class="form-group">
                         <div class="col-sm-12" style="padding:0px">
-                            <input type="text" class="form-control" id="name" placeholder="Nombre" name="nombre" value="">
+                            <input type="text" class="form-control" id="name" placeholder="Nombre" name="nombre" value="@if (Auth::check()){{ Auth::user()->name }}@endif">
                             @if($errors->has('nombre'))
                             <small class="form-text invalid-feedback">{{$errors->first('nombre')}} </small>
                             @endif
@@ -124,7 +124,7 @@
 
                     <div class="form-group">
                         <div class="col-sm-12" style="padding:0px">
-                            <input type="email" class="form-control" id="email" placeholder="Correo" name="email" value="">
+                            <input type="email" class="form-control" id="email" placeholder="Correo" name="email" value="@if (Auth::check()){{ Auth::user()->email }}@endif">
                             @if($errors->has('email'))
                             <small class="form-text invalid-feedback">{{$errors->first('email')}} </small>
                             @endif
@@ -133,9 +133,9 @@
 
                     <div class="form-group">
                         <div class="col-sm-12" style="padding:0px">
-                            <input type="number" class="form-control" id="mobile" placeholder="Teléfono" name="telefono" value="">
+                            <input type="number" class="form-control" id="mobile" placeholder="Teléfono" name="telefono" value="@if (Auth::check()){{ Auth::user()->telefono }}@endif">
                             @if($errors->has('telefono'))
-                            <small class="form-text invalid-feedback">{{$errors->first('email')}} </small>
+                            <small class="form-text invalid-feedback">{{$errors->first('telefono')}} </small>
                             @endif
                         </div>
                     </div>

@@ -197,6 +197,11 @@
                     <input type="hidden" class="form-control" id="newTotal" name="newTotal" value="{{$newTotal}}" required>
 
 
+                    <div class="row">
+                        <div class="col mb-5">
+                            <button type="submit" id="complete-order" class="btn btn-success w-100">Completar compra</button>
+                        </div>
+                    </div>
 
                 </form>
 
@@ -300,11 +305,6 @@
         </div> <!-- end-billingdetails -->
 
 
-        <div class="row">
-            <div class="col mb-5">
-                <button type="submit" id="complete-order" class="btn btn-success w-100">Completar compra</button>
-            </div>
-        </div>
 
 
     </div>

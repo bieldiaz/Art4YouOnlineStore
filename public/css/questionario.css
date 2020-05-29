@@ -1,5 +1,6 @@
 .modalINICIO{
   display: block;
+  
 }
 
 .resultados{
@@ -7,7 +8,7 @@
 }
 
 html,body {
-  animation: colorchange 300s; /* animation-name followed by duration in seconds*/
+  animation: colorchange 10000s; /* animation-name followed by duration in seconds*/
      /* you could also use milliseconds (ms) or something like 2.5s */
   -webkit-animation: colorchange 300s; /* Chrome and Safari */
   font-family: 'Cabin', sans-serif;

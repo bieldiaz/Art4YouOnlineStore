@@ -34,17 +34,19 @@ class ObrasController extends Controller
 
 
         $artistaForeing = DB::table('products')->join('artistas', 'artistas.id_artista', '=', 'products.id_artista')
-            ->select('artistas.*', 'products.*')->distinct()->paginate(6);
+            ->select('artistas.*', 'products.*')->distinct()->paginate();
+
+
+
+        $contador = $artistaForeing->count();
 
         $products = Products::all();
 
         $filter = PreusFiltrador::all();
 
-        $products = Products::all();
-
         $estil = Estil::all();
 
-        return view('obras', compact('products', 'artistaForeing', 'filter', 'valor1', 'valor2', 'estil', 'valorEstil'));
+        return view('obras', compact('products', 'artistaForeing', 'filter', 'valor1', 'valor2', 'estil', 'valorEstil', 'contador'));
     }
     /**
      * Display the specified resource.
@@ -52,6 +54,7 @@ class ObrasController extends Controller
      * @param  int  $titol
      * @return \Illuminate\Http\Response
      */
+
     public function show($titol)
     {
         $product = Products::where('titol', $titol)->firstOrFail();

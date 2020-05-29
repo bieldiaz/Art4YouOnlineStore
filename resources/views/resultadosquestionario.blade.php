@@ -52,9 +52,10 @@
                     </div>
                     <div class="linia"></div>
 
-                    <button type="button" class="btn btn-warning mx-auto d-flex mt-4" onclick="window.location.href='/'"><i class="fas fa-house-user"></i> Pagina Inicio</button>
 
                     @endforeach
+                    <button type="button" class="btn btn-warning mx-auto d-flex mt-4 mb-4" onclick="window.location.href='/'"><i class="fas fa-house-user"></i> Pagina Inicio</button>
+
                     @endif
                 </div>
 
@@ -78,4 +79,4 @@
 
 </script>
 
-</html
+</ht

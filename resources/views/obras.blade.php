@@ -158,65 +158,85 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="row mt-3">
-                    <div class="col-md-12 ">
-                        <div class="filtradordreta d-block float-left">
-                            <h6>Cuadros ({{count($products)}})</h6>
+                <?php $count = 0 ?>
+                <!--  CONTADOR DE OBRAS -->
+                @foreach($artistaForeing as $product)
+                @if($valor1 <= $product->preu && $valor2 >= $product->preu || $valor1=='' && $valor2=='' && $valorEstil=='' || $product->estilo == $valorEstil)
+                    <?php $count++ ?>
+                    @endif
+                    @endforeach
+                    <div class="row mt-3">
+                        <div class="col-md-12 ">
+                            <div class="filtradordreta d-block float-left">
+                                <h6>Cuadros ({{$count}})</h6>
+                            </div>
+                            @if(isset($valorEstil))
+                            <div class="filtradordreta d-block float-right">
+                                <h6>Estilo: {{$valorEstil}}</h6>
+                            </div>
+                            @endif
+                            @if(isset($valor1) && isset($valor2))
+                            <div class="filtradordreta d-block float-right">
+                                <h6>Precio: {{$valor1}}€ - {{$valor2}}€</h6>
+                            </div>
+                            @endif
                         </div>
-                        @if(isset($valorEstil))
-                        <div class="filtradordreta d-block float-right">
-                            <h6>Estilo: {{$valorEstil}}</h6>
-                        </div>
-                        @endif
-                        @if(isset($valor1) && isset($valor2))
-                        <div class="filtradordreta d-block float-right">
-                            <h6>Precio: {{$valor1}}€ - {{$valor2}}€</h6>
-                        </div>
-                        @endif
                     </div>
-                </div>
 
-                <div class="row">
-                    @foreach($artistaForeing as $product)
-                    @if($valor1 <= $product->preu && $valor2 >= $product->preu || $valor1=='' && $valor2=='' && $valorEstil=='' || $product->estilo == $valorEstil)
-                        <div class="productes col-md-6 col-xs-6 col-sm-12 col-xl-4 col-lg-6 mt-5 mb-5 mt-5 ">
-                            <div class="producte">
-                                <a href="{{route('product', $product->titol)}}" style="margin-left:0px"><img src="{{asset('storage/'.$product->img)}}" class="cuadrosartistas img-fluid rounded" alt=""></a>
-                                <div class="row mx-auto">
-                                    <div class="col-md-12 col-xs-12 col-sm-12 col-xl-12 col-lg-12 ">
-                                        <p class="textproducte" style="margin-top:10px">{{$product->alt}} x {{$product->ample}} x {{$product->profunditat}} cm</p>
+                    <div class="row">
+
+                        <!--    @if($artistaForeing->isEmpty())
+
+                    <h4>dasdadsas</h4>
+
+                    @endif -->
+                        <?php $contadorObras = 0; ?>
+
+                        @foreach($artistaForeing as $product)
+                        @if($valor1 <= $product->preu && $valor2 >= $product->preu || $valor1=='' && $valor2=='' && $valorEstil=='' || $product->estilo == $valorEstil )
+                            <div class="productes col-md-6 col-xs-6 col-sm-12 col-xl-4 col-lg-6 mt-5 mb-5 mt-5 ">
+                                <div class="producte">
+                                    <a href="{{route('product', $product->titol)}}" style="margin-left:0px"><img src="{{asset('storage/'.$product->img)}}" class="cuadrosartistas img-fluid rounded" alt=""></a>
+                                    <div class="row mx-auto">
+                                        <div class="col-md-12 col-xs-12 col-sm-12 col-xl-12 col-lg-12 ">
+                                            <p class="textproducte" style="margin-top:10px">{{$product->alt}} x {{$product->ample}} x {{$product->profunditat}} cm</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row mx-auto">
-                                    <div class="col-md-12  col-xs-12 col-sm-12 col-xl-12 col-lg-12 NOM mb-3">
-                                        <a class="NOMPRODUCTE" href="{{route('product', $product->titol)}}" style="font-size:17px;margin-left:0px;text-decoration:none;color:black">{{$product->titol}}</a>
+                                    <div class="row mx-auto">
+                                        <div class="col-md-12  col-xs-12 col-sm-12 col-xl-12 col-lg-12 NOM mb-3">
+                                            <a class="NOMPRODUCTE" href="{{route('product', $product->titol)}}" style="font-size:17px;margin-left:0px;text-decoration:none;color:black">{{$product->titol}}</a>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row mx-auto">
-                                    <div class="col-md-12 col-xs-12 col-sm-12 col-xl-12 col-lg-12  NOM mt-0">
-                                        <p class="textproducte" style="margin-top:-10px">{{$product->preu}} €</p>
+                                    <div class="row mx-auto">
+                                        <div class="col-md-12 col-xs-12 col-sm-12 col-xl-12 col-lg-12  NOM mt-0">
+                                            <p class="textproducte" style="margin-top:-10px">{{$product->preu}} €</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row mx-auto">
-                                    <div class="col-md-12 col-xs-12 col-sm-12 col-xl-12 col-lg-12 NOM mt-0">
-                                        <a href="{{route('artista.show', $product->nomcomplert)}}" class="textproducte" style="margin-top:-15px;color:grey;font-size:15px;margin-left:0px">
-                                            @if(!is_null($product->imgArtista))
-                                            <img class="fotoArtista" src="{{asset('storage/'.$product->imgArtista)}}" alt="">
-                                            @else
-                                            <i style="color:black" class="fas fa-user-circle fa-2x"></i>
-                                            @endif
-                                            {{$product->nomcomplert}}
-                                        </a>
+                                    <div class="row mx-auto">
+                                        <div class="col-md-12 col-xs-12 col-sm-12 col-xl-12 col-lg-12 NOM mt-0">
+                                            <a href="{{route('artista.show', $product->nomcomplert)}}" class="textproducte" style="margin-top:-15px;color:grey;font-size:15px;margin-left:0px">
+                                                @if(!is_null($product->imgArtista))
+                                                <img class="fotoArtista" src="{{asset('storage/'.$product->imgArtista)}}" alt="">
+                                                @else
+                                                <i style="color:black" class="fas fa-user-circle fa-2x"></i>
+                                                @endif
+                                                {{$product->nomcomplert}}
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                            <?php $contadorObras++ ?>
+                            @endif
+                            @endforeach
 
-                        @endif
+                            @if($contadorObras == 0)
+                            <div class="alert alert-warning col mt-3 text-center ml-2 mr-2" role="alert">
+                                0 OBRAS ENCONTRADAS
+                            </div>
+                            @endif
 
-                        @endforeach
-                </div>
+                    </div>
 
             </div>
         </div>

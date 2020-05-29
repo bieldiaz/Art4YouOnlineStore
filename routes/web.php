@@ -129,6 +129,10 @@ Route::get('/eresartista', function () {
     return view('registroartista');
 });
 
+Route::get('/presentacion', function () {
+    return view('presentacion');
+});
+
 /* Route::get('/formularioartista', function () {
     return view('formulariartista');
 }); */

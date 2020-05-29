@@ -14,7 +14,7 @@ class ContactoController extends Controller
         $this->validate($request, [
             'nombre' => 'required',
             'email' => 'required|email',
-            'telefono' => 'required',
+            'telefono' => 'required|string|min:9|max:9',
             'message' => 'required'
         ]);
 
@@ -24,7 +24,6 @@ class ContactoController extends Controller
         $contacto->email = $request['email'];
         $contacto->telefono = $request['telefono'];
         $contacto->message = $request['message'];
-
         $contacto->save();
 
         return redirect()->back()->with('flash_message', 'Gracias por tu mensaje! Pronto recibirás tu respuesta!');
