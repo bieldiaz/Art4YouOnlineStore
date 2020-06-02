@@ -56,8 +56,16 @@
                     <h4 class="modal-title" id="myModalLabel">Índex</h4>
                 </div>
                 <div class="modal-body">
-
-
+                    <ul>
+                        <li>Presentació del projecte</li>
+                        <li>Perquè he triat fer Art 4 You?</li>
+                        <li>Com m'he planificat?</li>
+                        <li>Tecnologies utilitzades</li>
+                        <li>Com ho he fet?</li>
+                        <li>Demo del projecte - Ordinador</li>
+                        <li>Demo del projecte - Telèfon</li>
+                        <li>Conclusions</li>
+                    </ul>
                 </div>
                 <div class="modal-footer">
                     <div class="dropdown col " style="margin-left:0px;display:flex">
@@ -95,11 +103,15 @@
                 </div>
                 <div class="modal-body">
 
+                    <div class="row mt-5 mb-5">
+                        <div class="col-xl-12 text-center">
+                            <a href="/"><img src="{{asset('img/logo2.png')}}" alt="" style="width:70%"></a>
+
+                        </div>
+                    </div>
 
                 </div>
                 <div class="modal-footer">
-
-
 
                     <button type="button" class="btn btn-default btn-prev"><i class="fas fa-chevron-circle-left fa-lg "></i></button>
                     <button type="button" class="btn btn-default btn-next float-left d-flex"><i class="fas fa-chevron-circle-right fa-lg"></i></button>
@@ -114,27 +126,15 @@
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Índex</h4>
+                    <h4 class="modal-title" id="myModalLabel">Perquè he triat fer Art 4 You?</h4>
                 </div>
                 <div class="modal-body">
 
 
                 </div>
                 <div class="modal-footer">
-                    <div class="dropdown col " style="margin-left:0px;display:flex">
-                        <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-question-circle"></i>
-                        </button>
-                        <div class="dropdown-menu row" aria-labelledby="dropdownMenu2">
-                            <div class="col">
-                                <p class="negreta">Arte Abstracto: </p>
-                                <p>El arte abstracto es una forma de expresión artística que prescinde de toda figuración y propone una nueva realidad distinta a la natural</p>
-                                <p class="negreta">Arte Figurativo: </p>
-                                <p>És el arte que, al contrario que el arte abstracto, se define por la representación1​ de figuras, entendiendo estas como objetos identificables mediante imágenes reconocibles</p>
-                            </div>
-                        </div>
-                    </div>
 
+                    <button type="button" class="btn btn-default btn-prev"><i class="fas fa-chevron-circle-left fa-lg "></i></button>
                     <button type="button" class="btn btn-default btn-next float-left d-flex"><i class="fas fa-chevron-circle-right fa-lg"></i></button>
 
                 </div>
@@ -143,53 +143,154 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">Que presupuesto tienes?</h4>
+                    <h4 class="modal-title" id="myModalLabel">Com m'he planificat?</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="presupuesto" id="presupuesto" value="0€-500€" checked>
-                        <label class="form-check-label" for="exampleRadios1">
-                            0€ - 500€
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="presupuesto" id="presupuesto" value="500€-1000€">
-                        <label class="form-check-label" for="exampleRadios2">
-                            500€ - 1000€
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="presupuesto" id="presupuesto" value="1000€-2000€">
-                        <label class="form-check-label" for="exampleRadios2">
-                            1000€ - 2000€
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="presupuesto" id="presupuesto" value="2000€-5000€">
-                        <label class="form-check-label" for="exampleRadios2">
-                            2000€ - 5000€
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="presupuesto" id="presupuesto" value=">5000€">
-                        <label class="form-check-label" for="exampleRadios2">
-                            > 5000€
-                        </label>
-                    </div>
+
+
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-default btn-next float-left d-flex">Finalizar</button>
+
+                    <button type="button" class="btn btn-default btn-prev"><i class="fas fa-chevron-circle-left fa-lg "></i></button>
+                    <button type="button" class="btn btn-default btn-next float-left d-flex"><i class="fas fa-chevron-circle-right fa-lg"></i></button>
+
                 </div>
             </div>
         </div>
     </div>
 
 
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Tecnologies utilitzades</h4>
+                </div>
+                <div class="modal-body">
 
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default btn-prev"><i class="fas fa-chevron-circle-left fa-lg "></i></button>
+                    <button type="button" class="btn btn-default btn-next float-left d-flex"><i class="fas fa-chevron-circle-right fa-lg"></i></button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Com ho he fet?</h4>
+                </div>
+                <div class="modal-body">
+
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default btn-prev"><i class="fas fa-chevron-circle-left fa-lg "></i></button>
+                    <button type="button" class="btn btn-default btn-next float-left d-flex"><i class="fas fa-chevron-circle-right fa-lg"></i></button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Demo del projecte - Ordinador</h4>
+                </div>
+                <div class="modal-body">
+
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default btn-prev"><i class="fas fa-chevron-circle-left fa-lg "></i></button>
+                    <button type="button" class="btn btn-default btn-next float-left d-flex"><i class="fas fa-chevron-circle-right fa-lg"></i></button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Demo del projecte - Telèfon</h4>
+                </div>
+                <div class="modal-body">
+
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default btn-prev"><i class="fas fa-chevron-circle-left fa-lg "></i></button>
+                    <button type="button" class="btn btn-default btn-next float-left d-flex"><i class="fas fa-chevron-circle-right fa-lg"></i></button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Conclusions</h4>
+                </div>
+                <div class="modal-body">
+
+
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-default btn-prev"><i class="fas fa-chevron-circle-left fa-lg "></i></button>
+                    <button type="button" class="btn btn-default btn-next float-left d-flex"><i class="fas fa-chevron-circle-right fa-lg"></i></button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel"></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row text-center">
+                        <div class="col">
+                            <h1>FI DE LA PRESENTACIÓ</h1>
+                            <img src="{{asset('img/gracies.jpg')}}" alt="" style="width:400px;heigth:400px;" class="mx-auto d-flex">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-warning empezar " onclick="window.location.href='/'">
+                        <i class="fas fa-home"></i> TORNAR INICI
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>

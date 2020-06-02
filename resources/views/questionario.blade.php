@@ -54,7 +54,7 @@
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title" id="myModalLabel">Buscas un cuadro abstracto o figurativo?</h4>
+                        <h4 class="modal-title" id="myModalLabel">Que estilo buscas?</h4>
                     </div>
                     <div class="modal-body">
                         <div class="form-check">
@@ -64,9 +64,15 @@
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="estilo" id="estilo" value="figurativo">
+                            <input class="form-check-input" type="radio" name="estilo" id="estilo" value="realismo">
                             <label class="form-check-label" for="exampleRadios2">
-                                Figurativo
+                                Realismo
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="estilo" id="estilo" value="impresionismo">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Impresionismo
                             </label>
                         </div>
 
@@ -80,14 +86,14 @@
                                 <div class="col">
                                     <p class="negreta">Arte Abstracto: </p>
                                     <p>El arte abstracto es una forma de expresión artística que prescinde de toda figuración y propone una nueva realidad distinta a la natural</p>
-                                    <p class="negreta">Arte Figurativo: </p>
+                                    <p class="negreta">Arte Realista: </p>
                                     <p>És el arte que, al contrario que el arte abstracto, se define por la representación1​ de figuras, entendiendo estas como objetos identificables mediante imágenes reconocibles</p>
+                                    <p class="negreta">Arte Impresionista: </p>
+                                    <p>Los cuadros impresionistas se construyen técnicamente a partir de manchas bastas de colores, las cuales actúan como puntos de una policromía más amplia, que es la obra en sí.</p>
                                 </div>
                             </div>
                         </div>
-
                         <button type="button" class="btn btn-default btn-next float-left d-flex"><i class="fas fa-chevron-circle-right fa-lg"></i></button>
-
                     </div>
                 </div>
             </div>
@@ -99,51 +105,7 @@
     </button> -->
 
         <!-- Modal -->
-        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h4 class="modal-title" id="myModalLabel">Que temática buscas?</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="tematica" id="tematica" value="paisajes" checked>
-                            <label class="form-check-label" for="exampleRadios1">
-                                Paisajes
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="tematica" id="tematica" value="figura">
-                            <label class="form-check-label" for="exampleRadios2">
-                                Figura
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="tematica" id="tematica" value="bodegón">
-                            <label class="form-check-label" for="exampleRadios2">
-                                Bodegón
-                            </label>
-                        </div>
 
-                    </div>
-                    <div class="modal-footer">
-                        <div class="dropdown col " style="margin-left:0px;display:flex">
-                            <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-question-circle"></i>
-                            </button>
-                            <div class="dropdown-menu row" aria-labelledby="dropdownMenu2">
-                                <div class="col">
-                                    <p class="negreta">Bodegón: </p>
-                                    <img src="{{ asset('img/bodegon.jpg') }}" alt="" class="img-responsive img-bodegon">
-                                </div>
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-default btn-prev"><i class="fas fa-chevron-circle-left fa-lg "></i></button>
-                        <button type="button" class="btn btn-default btn-next float-left d-flex"><i class="fas fa-chevron-circle-right fa-lg"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <!-- Modal -->
         <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -177,12 +139,7 @@
                                 Extra Grande
                             </label>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="medidas" id="medidas" value="Poster">
-                            <label class="form-check-label" for="exampleRadios2">
-                                Poster
-                            </label>
-                        </div>
+
                     </div>
                     <div class="modal-footer">
 
@@ -233,6 +190,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-prev"><i class="fas fa-chevron-circle-left fa-lg "></i></button>
+
                         <button type="submit" class="btn btn-default btn-next float-left d-flex">Finalizar</button>
                     </div>
                 </div>

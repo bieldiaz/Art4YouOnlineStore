@@ -47,6 +47,7 @@
                             <p>Titulo: <a href="{{route('product', $resultadosItem->titol)}}" style="color:#F7CA18;text-decoration:none">{{$resultadosItem->titol}}</a></p>
                             <p>Precio: {{$resultadosItem->preu}} €</p>
                             <p>Estilo: {{$resultadosItem->estilo}}</p>
+                            <p>Medidas: {{$resultadosItem->alt}} x {{$resultadosItem->ample}} x {{$resultadosItem->profunditat}} cm</p>
 
                         </div>
                     </div>
